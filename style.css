@@ -1,0 +1,179 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  position: relative;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* NAVBAR */
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 8rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: transparent;
+  z-index: 20;
+}
+
+.nav {
+  display: flex;
+}
+
+.theme {
+  display: flex;
+}
+
+.menu {
+  display: flex;
+  margin-right: 10rem;
+}
+
+.logo {
+  font-size: 2rem;
+  color: #222;
+  margin-left: 10rem;
+}
+
+ion-icon {
+  font-size: 3.5rem;
+  color: #222;
+}
+
+.dark,
+.light,
+.open,
+.close {
+  display: none;
+  cursor: pointer;
+  margin: 0.5rem;
+}
+
+.show {
+  display: block;
+}
+
+/* CONTENT */
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+
+.content video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  user-select: none;
+  mix-blend-mode: screen;
+}
+
+.content h1 {
+  font-size: 20vw;
+  color: #fff;
+  z-index: 10;
+  text-align: center;
+}
+
+/* MENU BACKDROP */
+.menu-backdrop {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  position: absolute;
+  top: 0;
+  left: -100vw;
+  width: 100%;
+  height: 100%;
+  z-index: 15;
+  text-align: center;
+  visibility: hidden;
+  transition: 0.5s;
+}
+
+.menu-backdrop.ativo {
+  left: 0;
+  visibility: visible;
+}
+
+.menu-backdrop ul li a {
+  font-size: 2rem;
+  padding: 2rem;
+  color: #222;
+}
+
+.menu-backdrop ul li {
+  margin: 2rem;
+}
+
+/* THEME CHANGE DARKNESS */
+.darkness .mask {
+  filter: invert(1);
+  mix-blend-mode: multiply;
+}
+
+.darkness .logo,
+.darkness ion-icon,
+.darkness .menu-backdrop ul li a,
+.darkness .copyright p {
+  color: #fff;
+}
+
+.darkness .menu-backdrop {
+  background-color: #343334;
+}
+
+/* FOOTER */
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+  padding: 2rem 10rem;
+}
+
+.copyright p {
+  font-size: 2rem;
+  color: #222;
+}
